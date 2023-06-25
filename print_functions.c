@@ -2,13 +2,13 @@
 
 int print_num(int number)
 {
+	int count = 0;
+
 	if (number == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-
-	int count = 0;
 
 	if (number < 0) /* For negative numbers */
 	{

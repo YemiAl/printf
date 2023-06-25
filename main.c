@@ -4,10 +4,9 @@ int main(void)
 {
     int num, my_num;
     char name[10] = "Oluyemi";
-    char *text;
-    text = "My score was 97%. I passed";
     char c = 'A';
     int j = 15000;
+
     
     printf("Using standard Printf\n");
     printf("1.\n");
@@ -63,7 +62,7 @@ int main(void)
     _printf("\n%d\n", my_num);    /* Change later */
     _printf("\n");
 
-
+    return (0);
 
 
 }

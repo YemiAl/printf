@@ -10,7 +10,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, num, num_count, str_count, count = 0;
+	int i, num, num_count, str_count, count = 0;
 	char ch;
 	char *str;
 	va_list argument;
