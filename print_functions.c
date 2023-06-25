@@ -38,3 +38,28 @@ int print_string(char *str)
 	}
 	return (count);
 }
+
+
+int decimalToBinary(int number)
+{
+	int digit;
+	int count = 0;
+	int binary = 0;
+	int base = 1;
+
+	if (number == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	while (number > 0)
+	{
+		digit = number % 2;
+		binary += digit * base;
+		base *= 10;
+		number /= 2;
+		count++;
+	}
+	_printf("%d", binary);
+	return (count);
+}

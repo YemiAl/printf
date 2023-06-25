@@ -62,6 +62,11 @@ int main(void)
     _printf("\n%d\n", my_num);    /* Change later */
     _printf("\n");
 
+    _printf("5A.\n");
+    my_num = _printf("My score was %b", 98);
+    _printf("\n%d\n", my_num);    /* Change later */
+    _printf("\n");
+
     return (0);
 
 

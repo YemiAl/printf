@@ -48,6 +48,12 @@ int _printf(const char *format, ...)
 				num_count = print_num(num);
 				count = count + num_count;
 			}
+			if (format[i + 1] == 'b')
+			{
+				num = va_arg(argument, int);
+				num_count = decimalToBinary(num);
+				count = count + num_count;
+			}
 			i++;
 		}
 	}
