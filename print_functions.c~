@@ -1,0 +1,50 @@
+#include "main.h"
+
+int print_num(int number)
+{
+	if (number == 0)
+	{
+		_putchar('0');
+		return (1);
+
+
+
+
+
+		int print_num(int number)
+{
+    if (number == 0) {
+        putchar('0');
+        return 1;
+    }
+
+    int count = 0;
+
+    // Handle negative numbers
+    if (number < 0) {
+        putchar('-');
+        count++;
+        number = -number;
+    }
+
+    if (number / 10 != 0) {
+        count += print_num(number / 10);
+    }
+
+    putchar('0' + (number % 10));
+    count++;
+
+    return count;
+}
+
+
+int print_string(char *str)
+{
+    int i = 0, count = 0;
+    while (str[i] != '\0')
+    {
+        _putchar(str[i]);
+        i++, count++;
+    }
+    return (count);
+}

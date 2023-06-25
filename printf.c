@@ -10,13 +10,13 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, count = 0;
+	int i, j, num, num_count, str_count, count = 0;
 	char ch;
 	char *str;
 	va_list argument;
 
 	va_start(argument, format);
-	for (i = 0; format[i] != '\0'; i++)
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
@@ -29,23 +29,26 @@ int _printf(const char *format, ...)
 			{
 				ch = va_arg(argument, int);
 				_putchar(ch);
-				i++, count++;
+				count++;
 			}
 			if (format[i + 1] == 's')
 			{
 				str = va_arg(argument, char *);
-				j = 0, i++;
-				while (str[j] != '\0')
-				{
-					_putchar(str[j]);
-					j++, count++;
-				}
+				str_count = print_string(str);
+				count = count + str_count;
 			}
 			if (format[i + 1] == '%')
 			{
 				_putchar(format[i + 1]);
-				i++, count++;
+				count++;
 			}
+			if ((format[i + 1] == 'd') || (format[i + 1] == 'i'))
+			{
+				num = va_arg(argument, int);
+				num_count = print_num(num);
+				count = count + num_count;
+			}
+			i++;
 		}
 	}
 	va_end(argument);
