@@ -12,5 +12,10 @@ int _printf(const char *format, ...);
 int print_num(int number);
 int print_string(char *str);
 int decimalToBinary(int number);
+int decimalToOctal(int number);
+int decimalToHEX(int number);
+int decimaltohex(int number);
+
+
 
 #endif

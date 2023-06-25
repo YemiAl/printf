@@ -54,6 +54,30 @@ int _printf(const char *format, ...)
 				num_count = decimalToBinary(num);
 				count = count + num_count;
 			}
+			if (format[i + 1] == 'u')
+			{
+				num = va_arg(argument, unsigned int);
+				num_count = print_num(num);
+				count = count + num_count;
+			}
+			if (format[i + 1] == 'o')
+			{
+				num = va_arg(argument, int);
+				num_count = decimalToOctal(num);
+				count = count + num_count;
+			}
+			if (format[i + 1] == 'X')
+			{
+				num = va_arg(argument, int);
+				num_count = decimalToHEX(num);
+				count = count + num_count;
+			}
+			if (format[i + 1] == 'x')
+			{
+				num = va_arg(argument, int);
+				num_count = decimaltohex(num);
+				count = count + num_count;
+			}
 			i++;
 		}
 	}

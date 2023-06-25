@@ -63,3 +63,59 @@ int decimalToBinary(int number)
 	_printf("%d", binary);
 	return (count);
 }
+
+
+int decimalToOctal(int number)
+{
+	int count = 0;
+	int octal = 0;
+	int base = 1;
+	int digit;
+
+	if (number == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	while (number > 0)
+	{
+		digit = number % 8;
+		octal += digit * base;
+		base *= 10;
+		number /= 8;
+		count++;
+	}
+	_printf("%d", octal);
+	return (count);
+}
+
+int decimalToHEX(int number)
+{
+	int i, count = 0;
+	int digit, index = 0;
+	char hexadecimal[32];
+
+	if (number == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	while (number > 0)
+	{
+		digit = number % 16;
+
+		if (digit < 10)
+			hexadecimal[index] = digit + '0';
+		else
+			hexadecimal[index] = digit - 10 + 'A';
+		index++;
+		number/= 16;
+		count++;
+	}
+	for (i = index - 1; i >= 0; i--)
+	{
+		_putchar(hexadecimal[i]);
+	}
+	return (count);
+}
